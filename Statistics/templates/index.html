@@ -8,12 +8,11 @@
     {% comment %}
     form with two field for comma separated values for Kendall's W with a submit button
     {% endcomment %}
-    <form action="" method="post">
-        <label for="First Set">First Set</label>
-        <input type="text" name="first_set" id="first_set" value="{{ first_set }}" />
-        <label for="Second Set">Second Set</label>
-        <input type="text" name="second_set" id="second_set" value="{{ second_set }}" />
-        <input type="submit" value="Submit" />
+{{ error }}
+    <form action="" method="POST">
+            {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="OK" />
     </form>
 
 
