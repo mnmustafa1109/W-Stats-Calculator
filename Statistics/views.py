@@ -3,18 +3,22 @@ from .inputForm import KendallWValueForms
 from rpy2.robjects.packages import STAP
 from rpy2.robjects.packages import importr
 from django.forms.models import model_to_dict
+from .settings import r_file_path
 
 def getKendallW(set_1, set_2):
     base = importr('base')
     c = base.c
     inputIntArr = []
+    inputIntArr2 = []
     for i in set_1.split(','):
         inputIntArr.append(int(i))
-    with open('/home/syednouman1618/PycharmProjects/W-Stats-Calculator/Statistics/stats.r', 'r') as f:
+    for i in set_2.split(','):
+        inputIntArr2.append(int(i))
+    with open(r_file_path, 'r') as f:
         string = f.read()
     myfunc = STAP(string, "stats")
-    print(myfunc.KendallW(c(inputIntArr), c(1,2,3)))
-    return myfunc.KendallW(c(inputIntArr), c(1,2,3))
+    print(myfunc.KendallW(c(inputIntArr), c(inputIntArr2)))
+    return myfunc.KendallW(c(inputIntArr), c(inputIntArr2))
 
 
 # Create your views here.
