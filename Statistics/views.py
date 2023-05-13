@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .inputForm import KendallWValueForms
 from rpy2.robjects.packages import STAP
 from rpy2.robjects.packages import importr
-from django.forms.models import model_to_dict
 from .settings import r_file_path
 
 def getKendallW(set_1, set_2):
@@ -47,8 +46,5 @@ def take_input(request, error=""):
         return render(request, 'index.html', context)
 
 def display_result(request):
-    # print(random)
-
-    # print(form.errors)
     result = str(request.session.get('result'))
     return render(request, 'result.html', {'result': result})

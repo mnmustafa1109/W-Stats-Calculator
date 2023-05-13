@@ -1,24 +1,11 @@
 {% extends "base.html" %}
 
 {% block container %}
-    {% comment %} 
-      parameter passed are lanes, tasks, events, processes, gateways and flows
-      which are lists of the corresponding elements
-    {% endcomment %}
-    {% comment %}
-    form with two field for comma separated values for Kendall's W with a submit button
-    {% endcomment %}
-{#    {{ error }}#}
-{#        {% for error_field, error_message in form.errors.items %}#}
-{#        {{ error_field|striptags }}: {{ error_message|striptags }}#}
-{#        {% endfor %}#}
-{#    {{ form.non_field_errors.as_ul }}#}
            {% if error %}
        <div style="border: 1px solid red; border-radius: 3px; background-color: red; color: white; padding: 15px;">
       {{ error }}
        {% endif %}
     </div>
-
     <article>
         <form action="" method="POST">
             {% csrf_token %}
