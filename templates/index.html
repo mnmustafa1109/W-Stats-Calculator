@@ -13,12 +13,20 @@
 {#        {{ error_field|striptags }}: {{ error_message|striptags }}#}
 {#        {% endfor %}#}
 {#    {{ form.non_field_errors.as_ul }}#}
+           {% if error %}
+       <div style="border: 1px solid red; border-radius: 3px; background-color: red; color: white; padding: 15px;">
+      {{ error }}
+       {% endif %}
+    </div>
 
-    <form action="" method="POST">
+    <article>
+        <form action="" method="POST">
             {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="OK" />
-    </form>
+            {{ form.as_p }}
+            <input type="submit" value="OK" />
+        </form>
+    </article>
+
 
 
 
