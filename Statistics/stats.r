@@ -27,4 +27,4 @@ KendallW <- function(x, y, na.rm = FALSE) {
   W <- W / (n * (n - 1) / 2)
   return(W)
 }
-print (KendallW(c(1,2,3,4,5),c(1,0,11,4,2)))
+# print (KendallW(c(1,2,3,4,5),c(1,0,11,4,2)))
