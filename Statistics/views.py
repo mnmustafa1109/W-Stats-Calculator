@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_protect
+
 from .inputForm import KendallWValueForms
 from rpy2.robjects.packages import STAP
 from rpy2.robjects.packages import importr
 from .settings import r_file_path
+
 
 def getKendallW(set_1, set_2):
     base = importr('base')
@@ -20,7 +23,8 @@ def getKendallW(set_1, set_2):
     return myfunc.KendallW(c(inputIntArr), c(inputIntArr2))
 
 
-# Create your views here.
+# Create your views here
+@csrf_protect
 def take_input(request, error=""):
     if request.method == 'POST':
         form = KendallWValueForms(request.POST)
@@ -45,6 +49,8 @@ def take_input(request, error=""):
 
         return render(request, 'index.html', context)
 
+
+@csrf_protect
 def display_result(request):
     result = str(request.session.get('result'))
     return render(request, 'result.html', {'result': result})
