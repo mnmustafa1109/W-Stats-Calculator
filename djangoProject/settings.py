@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-nm4wt*tf5^33h)04iwnj3a_b6@ru4lo&ozca*t_@2d9*9%kz0a
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://w-calculator.fly.dev/']
+CSRF_TRUSTED_ORIGINS = ['https://w-calculator.fly.dev/', 'http://w-calculator.fly.dev']
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = ['https://w-calculator.fly.dev/', 'http://w-calculator.fly.dev']
 
 # Application definition
 
