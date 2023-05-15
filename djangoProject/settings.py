@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-nm4wt*tf5^33h)04iwnj3a_b6@ru4lo&ozca*t_@2d9*9%kz0a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://w-calculator.fly.dev/']
 
 # Application definition
 
@@ -127,3 +127,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+
