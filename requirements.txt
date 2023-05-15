@@ -1,4 +1,13 @@
 asgiref==3.6.0
+cffi==1.15.1
 Django==4.2.1
-sqlparse==0.4.4
+gunicorn==20.1.0
+Jinja2==3.1.2
+MarkupSafe==2.1.2
+pycparser==2.21
+pytz==2023.3
+pytz-deprecation-shim==0.1.0.post0
 rpy2==3.5.1
+sqlparse==0.4.4
+tzdata==2023.3
+tzlocal==4.3
